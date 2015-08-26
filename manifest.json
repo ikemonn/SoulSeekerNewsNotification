@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "SoulSeekerNewsNotification",
+  "description": "This extension will notice you updated news of Soul Seeker.",
+  "version": "1.0",
+  "icons": {
+    "16": "images/icon/icon_16.png",
+    "48": "images/icon/icon_48.png",
+    "128": "images/icon/icon_128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon/icon_19.png",
+      "38": "images/icon/icon_38.png"
+    },
+    "default_title": "SoulSeeker News Notification",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": ["css/contents_style.css"],
+      "js": []
+    }
+  ],
+  "permissions": [
+    "cookies",
+    "tabs",
+    "https://*/*",
+    "http://*/*",
+    "storage",
+    "webNavigation"
+  ]
+}
